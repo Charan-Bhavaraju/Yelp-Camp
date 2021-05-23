@@ -22,6 +22,9 @@
                     <p class="card-text">
                         <%= campground.description %>
                     </p>
+                    <p class="card-text">
+                        <%= campground.properties.popUpMarkup %>
+                    </p>
                     <p class="card-text text-muted">
                         <%= campground.location %>
                     </p>
@@ -35,6 +38,6 @@
 
             <script>
                 const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-            // let campground = '<%- JSON.stringify(campground) %>'
+                const campgrounds = { features: JSON.parse('<%- JSON.stringify(campgrounds) %>') }
             </script>
             <script src="/javascripts/showClustermap.js"></script>
